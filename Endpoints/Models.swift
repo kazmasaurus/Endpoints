@@ -57,6 +57,15 @@ enum Related<Relationship: RelationshipType> {
     // (Probably not, but presumably you could double check with someone.)
 }
 
+// MARK: - FromJSONification
+typealias JSON = [String : AnyObject]
+protocol FromJSONable { init?(json: JSON) }
+
+func attribute<T>(from: JSON, at: String) -> T? {
+    let attributes = from["attributes"] as? JSON
+    return attributes?[at] as? T
+}
+
 // MARK: - Data Models
 
 struct Author {
@@ -127,7 +136,18 @@ struct Store {
     var books: To<Many<Book>>
 }
 
+extension Store: FromJSONable {
+    init?(json: JSON) {
+        guard
+            let id: String = json["id"] as? String,
+            let name: String = attribute(from: json, at: "name")
+        else { return nil }
 
+        self.head = Head(id: id)
+        self.name = name
+        self.books = To(friend: .unknown)
+    }
+}
 
 
 
