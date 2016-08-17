@@ -9,9 +9,13 @@
 import Foundation
 
 
+// MARK: Data Modeling
+
 /// The head matter for a given object.
 /// Probably just the id, but a place to add stuff like `created_at`
 struct Head { var id: String }
+
+// MARK: Relationships
 
 /// A relationship pointer.
 struct Pointer { var id: String; var type: String }
@@ -21,8 +25,7 @@ struct Pointer { var id: String; var type: String }
 /// resource locations for the related resource,
 /// and the related object itself if it's been fetched.
 struct To<Relationship: RelationshipType> {
-    var selfLink: String
-    var relatedLink: String
+    /// Links would go here.
     var friend: Related<Relationship>
 }
 
@@ -54,14 +57,15 @@ enum Related<Relationship: RelationshipType> {
     // (Probably not, but presumably you could double check with someone.)
 }
 
+// MARK: - Data Models
 
 struct Author {
 
     var head: Head
 
     var name: String
-    var date_of_birth: Date
-    var date_of_death: Date
+    var birth: Date
+    var death: Date?
 
     var books: To<Many<Book>>
     var photos: To<Many<Photo>>
@@ -72,7 +76,7 @@ struct Book {
     var head: Head
 
     var title: String
-    var date_published: Date
+    var published: Date
 
     var author: To<One<Author>>
     var series: To<Maybe<Series>>
