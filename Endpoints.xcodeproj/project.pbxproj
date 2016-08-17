@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31A19E261D63C413004B0E01 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A19E251D63C413004B0E01 /* Models.swift */; };
 		31FEB2561D5BACA000A4F3C6 /* Endpoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 31FEB2551D5BACA000A4F3C6 /* Endpoints.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31FEB25D1D5BACA000A4F3C6 /* Endpoints.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FEB2521D5BACA000A4F3C6 /* Endpoints.framework */; };
 		31FEB2621D5BACA000A4F3C6 /* EndpointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FEB2611D5BACA000A4F3C6 /* EndpointsTests.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31A19E251D63C413004B0E01 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		31FEB2521D5BACA000A4F3C6 /* Endpoints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Endpoints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FEB2551D5BACA000A4F3C6 /* Endpoints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Endpoints.h; sourceTree = "<group>"; };
 		31FEB2571D5BACA000A4F3C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				31FEB2551D5BACA000A4F3C6 /* Endpoints.h */,
+				31A19E251D63C413004B0E01 /* Models.swift */,
 				31FEB2571D5BACA000A4F3C6 /* Info.plist */,
 			);
 			path = Endpoints;
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A19E261D63C413004B0E01 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +313,7 @@
 		31FEB2671D5BACA000A4F3C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -321,6 +326,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.workwithopal.Endpoints;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -328,6 +334,7 @@
 		31FEB2681D5BACA000A4F3C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
