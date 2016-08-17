@@ -2,4 +2,4 @@
 # The node project that runs the API.
 # Depended on through Carthage because npm chokes
 # on projects that don't have a versien number
-github "endpoints/endpoints-example" "40d8e80"
+github "kazmasaurus/endpoints-example" "more-workish"
