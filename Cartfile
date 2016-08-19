@@ -1,4 +1,7 @@
 
+github "jshier/Argo" "master"
+github "jshier/Curry" "master"
+
 # The node project that runs the API.
 # Depended on through Carthage because npm chokes
 # on projects that don't have a versien number

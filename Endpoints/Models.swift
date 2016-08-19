@@ -8,6 +8,9 @@
 
 import Foundation
 
+import Argo
+import Curry
+import Runes
 
 // MARK: Data Modeling
 
@@ -16,6 +19,8 @@ import Foundation
 public struct Head {
     public var id: String
 }
+
+
 
 // MARK: Relationships
 
