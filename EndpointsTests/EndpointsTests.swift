@@ -9,19 +9,19 @@
 import XCTest
 @testable import Endpoints
 
+import Argo
+
 class EndpointsTests: XCTestCase {
 
     func testEmptyStore() {
-        let data = datum(from: "EmptyStore".jsonFixture)!
-        let store = Store(json: data)
+        let store: Store? = (JSON("EmptyStore".jsonFixture) <| "data").value
         XCTAssertNotNil(store)
         XCTAssertEqual(store?.head.id, "1")
         XCTAssertEqual(store?.name, "empty store")
     }
 
     func testFullStore() {
-        let data = datum(from: "FullStore".jsonFixture)!
-        let store = Store(json: data)
+        let store: Store? = (JSON("FullStore".jsonFixture) <| "data").value
         XCTAssertNotNil(store)
         XCTAssertEqual(store?.head.id, "2")
         XCTAssertEqual(store?.name, "full store")
@@ -31,5 +31,3 @@ class EndpointsTests: XCTestCase {
         XCTAssertEqual(pointers, expectedPointers)
     }
 }
-
-func datum(from: JSON) -> JSON! { return from["data"] as? JSON }

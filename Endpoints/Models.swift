@@ -18,9 +18,16 @@ import Runes
 /// Probably just the id, but a place to add stuff like `created_at`
 public struct Head {
     public var id: String
+    public var type: String
 }
 
-
+extension Head: Decodable {
+    public static func decode(_ j: Argo.JSON) -> Decoded<Head> {
+        return curry(Head.init)
+            <^> j <| "id"
+            <*> j <| "type"
+    }
+}
 
 // MARK: Relationships
 
@@ -116,15 +123,6 @@ public enum Maybe<Element>: RelationshipType {
     public typealias ElementType = Optional<Element>
 }
 
-// MARK: - FromJSONification
-typealias JSON = [String : AnyObject]
-protocol FromJSONable { init?(json: JSON) }
-
-func attribute<T>(from: JSON, at: String) -> T? {
-    let attributes = from["attributes"] as? JSON
-    return attributes?[at] as? T
-}
-
 // MARK: - Data Models
 
 struct Author {
@@ -188,26 +186,43 @@ struct Series {
     var bookRelationships: To<Many<Book>>
 }
 
-struct Store {
+public struct Store {
     var head: Head
 
     var name: String
 
-    var books: [Book] { return bookRelationships.data.asFetched ?? [] }
+//    var books: [Boo] { return bookRelationships.data.asFetched ?? [] }
     // or var books: [Book]? ?
-    var bookRelationships: To<Many<Book>>
+    var bookRelationships: To<Many<Int>>
 }
 
-extension Store: FromJSONable {
-    init?(json: JSON) {
-        guard
-            let id: String = json["id"] as? String,
-            let name: String = attribute(from: json, at: "name")
-        else { return nil }
+struct Boo {
+    var head: Head
+    var name: String
+}
 
-        self.head = Head(id: id)
-        self.name = name
-        self.bookRelationships = To(data: .unknown)
+extension To: Decodable {
+    public static func decode(_ json: JSON) -> Decoded<To<Relationship>> {
+        <#code#>
+    }
+}
+
+extension Boo: Decodable {
+    public static func decode(_ json: JSON) -> Decoded<Boo> {
+        return curry(Boo.init)
+            <^> json <| []
+            <*> json <| ["attributes", "name"]
+    }
+}
+
+extension Store: Decodable {
+
+    public static func decode(_ json: JSON) -> Decoded<Store> {
+
+        let a = curry(Store.init)
+            <^> json <| []
+            <*> json <| ["attributes", "name"]
+        let b = a <*> json <| ["relationships", "books"]
     }
 }
 
