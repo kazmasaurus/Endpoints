@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		31849BA91D6533D6004C5C65 /* EmptyStore.json in Resources */ = {isa = PBXBuildFile; fileRef = 31849BA81D6533D6004C5C65 /* EmptyStore.json */; };
 		31849BAB1D6533ED004C5C65 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31849BAA1D6533ED004C5C65 /* Fixtures.swift */; };
+		31925D791D663B4800F8E720 /* FullStore.json in Resources */ = {isa = PBXBuildFile; fileRef = 31925D781D663B4800F8E720 /* FullStore.json */; };
 		31A19E261D63C413004B0E01 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A19E251D63C413004B0E01 /* Models.swift */; };
 		31FEB2561D5BACA000A4F3C6 /* Endpoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 31FEB2551D5BACA000A4F3C6 /* Endpoints.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31FEB25D1D5BACA000A4F3C6 /* Endpoints.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FEB2521D5BACA000A4F3C6 /* Endpoints.framework */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		31849BA81D6533D6004C5C65 /* EmptyStore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EmptyStore.json; path = Fixtures/EmptyStore.json; sourceTree = "<group>"; };
 		31849BAA1D6533ED004C5C65 /* Fixtures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fixtures.swift; path = Fixtures/Fixtures.swift; sourceTree = "<group>"; };
+		31925D781D663B4800F8E720 /* FullStore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = FullStore.json; path = Fixtures/FullStore.json; sourceTree = "<group>"; };
 		31A19E251D63C413004B0E01 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		31FEB2521D5BACA000A4F3C6 /* Endpoints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Endpoints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FEB2551D5BACA000A4F3C6 /* Endpoints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Endpoints.h; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				31849BAA1D6533ED004C5C65 /* Fixtures.swift */,
 				31849BA81D6533D6004C5C65 /* EmptyStore.json */,
+				31925D781D663B4800F8E720 /* FullStore.json */,
 			);
 			name = Fixtures;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31925D791D663B4800F8E720 /* FullStore.json in Resources */,
 				31849BA91D6533D6004C5C65 /* EmptyStore.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

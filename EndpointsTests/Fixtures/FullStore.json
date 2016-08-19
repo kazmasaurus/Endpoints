@@ -1,0 +1,68 @@
+{
+    "data": {
+        "attributes": {
+            "created_at": "2016-08-18 16:57:36",
+            "name": "full store",
+            "updated_at": "2016-08-18 16:57:36"
+        },
+        "id": "2",
+        "links": {
+            "self": "/v1/stores/2"
+        },
+        "relationships": {
+            "books": {
+                "data": [
+                    {
+                        "id": "1",
+                        "type": "books"
+                    },
+                    {
+                        "id": "2",
+                        "type": "books"
+                    },
+                    {
+                        "id": "3",
+                        "type": "books"
+                    },
+                    {
+                        "id": "4",
+                        "type": "books"
+                    },
+                    {
+                        "id": "5",
+                        "type": "books"
+                    },
+                    {
+                        "id": "6",
+                        "type": "books"
+                    },
+                    {
+                        "id": "7",
+                        "type": "books"
+                    },
+                    {
+                        "id": "8",
+                        "type": "books"
+                    },
+                    {
+                        "id": "9",
+                        "type": "books"
+                    },
+                    {
+                        "id": "10",
+                        "type": "books"
+                    },
+                    {
+                        "id": "11",
+                        "type": "books"
+                    }
+                ],
+                "links": {
+                    "related": "/v1/stores/2/books",
+                    "self": "/v1/stores/2/relationships/books"
+                }
+            }
+        },
+        "type": "stores"
+    }
+}
