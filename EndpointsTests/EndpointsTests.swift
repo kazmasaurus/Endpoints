@@ -14,7 +14,9 @@ import Argo
 class EndpointsTests: XCTestCase {
 
     func testEmptyStore() {
-        let store: Store? = (JSON("EmptyStore".jsonFixture) <| "data").value
+        let decoded: Decoded<Store> = (JSON("EmptyStore".jsonFixture) <| "data")
+        print(decoded.error)
+        let store: Store? = decoded.value
         XCTAssertNotNil(store)
         XCTAssertEqual(store?.head.id, "1")
         XCTAssertEqual(store?.name, "empty store")
